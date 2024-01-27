@@ -82,6 +82,9 @@ export class ProductsService {
 
   addToCart(idCart: number) {
     // console.log('add to cart'  +  this.cartArray.id)
+    if (this.cartArray.id !== undefined) { 
+      console.log('problem')
+    }
     if (this.cartArray.id.includes(idCart)) {
       for (let i = 0; i < this.cartArray.id.length; i++) {
         if (this.cartArray.id[i] === idCart) {
