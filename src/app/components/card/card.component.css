@@ -79,9 +79,6 @@
     .allCards{
         grid-template-columns: repeat(2, 1fr);
     }
-    /* .cart{
-        width: fit-content
-    } */
 }
 @media(width< 800px ){
     .allCards{
