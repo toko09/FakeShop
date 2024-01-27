@@ -73,8 +73,11 @@ export class ProductsService {
           .subscribe((response) => {
             this.AllProducts$.next(response);
             const storedCart = localStorage.getItem('cart');
-            this.cartArray = storedCart ? JSON.parse(storedCart) : [];
-            this.cartNumber$.next(this.sum(this.cartArray.quantity));
+            if (storedCart) {
+              this.cartArray = storedCart ? JSON.parse(storedCart) : [];
+              this.cartNumber$.next(this.sum(this.cartArray.quantity));
+            }
+            else { this.cartNumber$.next(0)}
           });
       }
     });
