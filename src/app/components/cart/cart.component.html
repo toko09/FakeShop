@@ -1,0 +1,21 @@
+<div   class="allCarts" *ngIf="vm$ | async as vm">
+    <div  appHighlight="blue"   class="cart" [class]="'n'+i" *ngFor="let product of vm.cartProducts, let i = index">
+        <img  [src]="product.images[0]" alt=""> 
+        <h1  >{{product.title }}</h1>
+        <div class="prices">
+            <h3 class="oldPrice">{{product.price / (100 - product.discountPercentage) * 100 | currency}} </h3>
+            <h3 class="percentage"> {{product.discountPercentage}}%</h3>
+        </div>
+        <h3 class="price"> {{product.price | currency}} </h3>
+        <div class="bottomOfCart">
+            <h3 class="quantity">Quantity:{{getQuantity(vm.cArray, product.id)}}</h3>
+            <button (click)="deleteFromCart(product.id)" class="cartButtonDelete"><i class="fa-solid fa-trash"></i></button>
+        </div>
+        <h4 class="onSale"><i class="fa-solid fa-tag"></i> on sale</h4>
+        <h4 class="popular"> <i class="fa-solid fa-circle-check"></i> popular</h4>
+    </div>
+    <div class="cart">
+        <h1>Total Products: {{vm.cartNumber}} </h1>
+        <h1>Price:{{ countPrice(vm.cartProducts, vm.cArray) |  currency }} </h1>
+    </div>
+</div>

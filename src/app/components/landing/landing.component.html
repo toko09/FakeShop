@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="fixed-photo"></div>
+    <div class="content" appSlowScroll>
+        <h1 class="fixedPhoto_h1">Re Design</h1>
+        <h2 class="fixedPhoto_h2">Essentials technics for luxury living</h2>
+            <button routerLink="/shop" class="fixedPhoto_button">Shop Now</button>    
+        </div>
+</div>
+
+<div class="carousel">
+    <h1 class="sales">Sales</h1>
+    <button  (click)="moveLeft()" class="leftbutton"><</button>
+    <button (click)="moveRight()" class="rightbutton">></button>
+    <div class="carouselDiv">
+        <div *ngFor="let slide of LandingCarousel | slice:0:crslNum; let slideIndex = index">
+            <img class="carouselimage" [src]="LandingCarousel[indexCounter(slideIndex + currentIndex)].url" alt="">
+            <h2>{{ LandingCarousel[indexCounter(slideIndex + currentIndex)].title }}</h2>
+        </div>
+        
+    </div>
+</div>
+
+<div class="zerowaste">
+    <div class="zerowaste_text">
+        <h1>Zero Waste</h1>
+        <p>Where quality meets eco-friendly</p>
+        <button>shop now</button>
+    </div>
+    <div class="zerowaste_photo" >
+        <img src="/assets/zerowaste.avif" alt="">
+    </div>
+
+</div>
+<image-slider ></image-slider>
+<div class="mission">
+    <h1 class="mission_h1">Re Design Mission</h1>
+    <h2>We believe in ethical and smart shopping. All of our products are carefully <br>
+        selected to ensure they align with our core values.</h2>
+    <div class="mission_svgs">
+        <div class="svg_1st">
+            <div>
+                <h1><i class="fa-solid fa-seedling"></i></h1>
+                <h3>trees</h3>
+            </div>
+            <div>
+                <h1><i class="fa-solid fa-recycle"></i></h1>
+                <h3>recycle</h3>
+            </div>
+            <div>
+                <h1><i class="fa-solid fa-water"></i></h1>
+                <h3>fresh water</h3>
+            </div>
+        </div>
+        <div class="svg_2nd">
+            <div>
+                <h1><i class="fa-solid fa-tree"></i></h1>
+                <h3>plant trees</h3>
+            </div>
+            <div>
+                <h1><i class="fa-solid fa-mountain-sun"></i></h1>
+                <h3>tourism</h3>
+            </div>
+        </div>
+    </div>
+    <p class="mission_p">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you</p>
+    <p class="mission_p">This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p>
+    <button class="mission_button">Learn More</button>
+</div>
+<div class="scrollSide">
+    <h1>Follow Us</h1>
+    <h1>@Fake</h1>
+
+
+    <div class="scrollDiv">
+        <button  (click)="onClick(false)" class="scrollLeft" ><</button>
+        <button (click)="onClick(true)" class="scrollRight" >></button>
+        <div class="scrollCarousel"> 
+            <ng-container *ngFor="let slide of scrollCarousel; let i= index">
+                <img [src]="scrollCarousel[i].url" alt="">
+                
+            </ng-container>
+        </div>
+    </div>
+   
+
+</div>
+<div class="contacts">
+    <h1>Contacts us here</h1>
+    <a href="">Github <i class="fa-brands fa-github"></i></a>
+    <a href="">Facebook <i class="fa-brands fa-facebook"></i></a>
+    <a href="">Instagram <i class="fa-brands fa-instagram"></i></a>
+    <a href="">Twitter <i class="fa-brands fa-twitter"></i></a>
+
+</div>
+

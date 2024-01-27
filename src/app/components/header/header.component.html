@@ -1,0 +1,29 @@
+<div class="maindiv">
+    <nav>
+        <div class="first-row">
+            <h1 routerLink="/menu" ><i class="fa-solid fa-house"></i> Menu</h1>
+            <div class="searchGroup">
+                <input [(ngModel)]="searchText" type="text" placeholder="seach">
+                <button (click)="onSearch()" class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="cart" routerLink="/cart" >
+                <div *ngIf="cartNumber$ |async as num " class="circle-container">
+                        <p class="circle-number">{{num}}</p>
+                </div>
+                <div *ngIf="!(cartNumber$ |async)! " class="circle-container">
+                    <p class="circle-number">0</p>
+            </div>
+                <h3>Cart <i class="fa-solid fa-cart-shopping"></i></h3>
+            </div>
+            <h3 routerLink="sign-in">Sign in <i class="fa-solid fa-user"></i></h3>
+        </div>
+        <div class="second-row">
+            <div class="searchGroup">
+                <input type="text" placeholder="seach">
+                <button class="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </nav>
+</div>
+

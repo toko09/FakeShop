@@ -1,0 +1,111 @@
+.maindiv{
+    background-color: rgb(252, 240, 222);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav{
+    padding: 0 20px;
+}
+
+.first-row{
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Agbalumo, sans-serif;
+}
+.second-row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.searchGroup{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.searchGroup  > input {
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+    width: 80%;
+}
+.searchGroup > button{
+    padding: 10px 10px;
+    border: 3px solid black;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    background-color: lightgrey;
+    width: 20%;
+}
+
+input:focus{
+    outline: none; 
+}
+.second-row > input{
+    margin: 12px;
+    margin-top: 0;
+    width: 100%;
+}
+.first-row > .searchGroup {
+    display: none;
+}
+h1:hover,h3:hover, .searchbtn:hover{
+    cursor: pointer;
+    color: aqua;
+    transition: color  500ms ;
+}
+.cart{
+    position: relative;
+}
+.circle-container {
+    width: 20px;
+    height: 20px; 
+    background-color: orange;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: self-end;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.circle-number {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+@media(width>800px){
+    .maindiv{background-color:rgb(252, 240, 222);
+    font-size: 20px;}
+    .second-row {
+        display: none;
+    }
+    .first-row > .searchGroup {
+        min-width: 400px;
+        display: inline;
+    }
+    .first-row > input::placeholder {
+        font-size: 1rem;
+    }
+    .first-row{
+        justify-content: space-evenly;
+    }
+    .searchGroup{
+        width: fit-content;
+    }
+    
+
+    
+
+ 
+   
+}

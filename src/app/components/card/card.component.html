@@ -1,0 +1,12 @@
+<div   class="allCards" *ngIf="allProducts ">
+    <div  appHighlight="blue"   class="card" [class]="'n'+i" *ngFor="let product of allProducts.products, let i = index">
+        <img  [src]="product.images[0]" alt=""> 
+        <h1  >{{product.title }}</h1>
+        <h3 _ngcontent-ng-c2712827787=""><span _ngcontent-ng-c2712827787="" class="oldPrice">$1,095.54</span><span _ngcontent-ng-c2712827787="" class="percentage"> 17.94%</span></h3>
+        <h3 class="price"> {{product.price | currency}} <button (touchstart)="addToCart(product.id)"  (click)="addToCart(product.id)" class="cartButtonAdd"><i class="fa-solid fa-cart-shopping"></i></button></h3>
+        <h4 class="onSale"><i class="fa-solid fa-tag"></i> on sale</h4>
+        <h4 class="popular"> <i class="fa-solid fa-circle-check"></i> popular</h4>
+    </div>
+</div>
+
+
