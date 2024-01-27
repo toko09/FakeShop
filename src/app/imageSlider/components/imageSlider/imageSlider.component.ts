@@ -1,13 +1,5 @@
 
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import {
-  interval,
-  Observable,
-  startWith,
-  Subject,
-  switchMap,
-  timer,
-} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SlideInterface } from '../../types/slide.interface';
 
 @Component({

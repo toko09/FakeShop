@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { combineLatest, map } from 'rxjs';
-import { ProductsService } from 'src/app/services/products.service';
-import { Product, cartArray } from 'src/app/types/products';
+import { ProductsService } from '../../services/products.service';
+import { Product, cartArray } from '../../types/products';
 
 @Component({
   selector: 'app-cart',

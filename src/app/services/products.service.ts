@@ -76,8 +76,9 @@ export class ProductsService {
             if (storedCart) {
               this.cartArray = storedCart ? JSON.parse(storedCart) : [];
               this.cartNumber$.next(this.sum(this.cartArray.quantity));
+            } else {
+              this.cartNumber$.next(0);
             }
-            else { this.cartNumber$.next(0)}
           });
       }
     });
@@ -85,9 +86,9 @@ export class ProductsService {
 
   addToCart(idCart: number) {
     // console.log('add to cart'  +  this.cartArray.id)
-    if (this.cartArray.id !== undefined) { 
-      console.log('problem')
-    }
+    // if (this.cartArray.id !== undefined) {
+    //   console.log('problem')
+    // }
     if (this.cartArray.id.includes(idCart)) {
       for (let i = 0; i < this.cartArray.id.length; i++) {
         if (this.cartArray.id[i] === idCart) {

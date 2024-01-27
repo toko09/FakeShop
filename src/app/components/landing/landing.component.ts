@@ -5,8 +5,9 @@ import {
   OnInit,
   Renderer2,
 } from '@angular/core';
-import { SlideInterface } from 'src/app/imageSlider/types/slide.interface';
-import { ProductsService } from 'src/app/services/products.service';
+import { SlideInterface } from '../../imageSlider/types/slide.interface';
+
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-landing',

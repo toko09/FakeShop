@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
-import { ProductsService } from 'src/app/services/products.service';
-import { AllProducts, Product } from 'src/app/types/products';
+import { ProductsService } from '../../services/products.service';
+import { AllProducts, Product } from '../../types/products';
 
 @Component({
   selector: 'app-card',
