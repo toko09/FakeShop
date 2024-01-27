@@ -15,6 +15,7 @@ export class ProductsService {
   sum(arr: number[]): number {
     let s: number = 0;
     for (let i of arr) {
+      if (arr === undefined) { console.log('sum indefined')}
       s += i;
     }
     return s;
