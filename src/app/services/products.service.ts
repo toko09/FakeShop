@@ -14,7 +14,7 @@ export class ProductsService {
 
   sum(arr: number[]): number {
     let s: number = 0;
-    if (arr === undefined) { console.log('sum indefined') }
+    if (arr === undefined) {  }
     else { 
       for (let i of arr) {
         s += i;
@@ -88,24 +88,34 @@ export class ProductsService {
   }
 
   addToCart(idCart: number) {
-    // console.log('add to cart'  +  this.cartArray.id)
-    // if (this.cartArray.id !== undefined) {
-    //   console.log('problem')
-    // }
-    if (this.cartArray.id != undefined) { 
 
-      if (this.cartArray.id.includes(idCart)) {
-        for (let i = 0; i < this.cartArray.id.length; i++) {
-          if (this.cartArray.id[i] === idCart) {
-            this.cartArray.quantity[i] += 1;
-          }
-        }
-      } else if (!this.cartArray.id.includes(idCart)) {
-        console.log('adding new item to cart')
-        this.cartArray.id.push(idCart);
-        this.cartArray.quantity.push(1);
-      }
-    }
+    const index = this.cartArray.id.indexOf(idCart);
+
+if (index !== -1) {
+    // If the id exists, increase the quantity
+    this.cartArray.quantity[index] += 1;
+    console.log('Increased quantity for item:', idCart);
+} else {
+    // If the id doesn't exist, add it to the cartArray with quantity 1
+    this.cartArray.id.push(idCart);
+    this.cartArray.quantity.push(1);
+    console.log('Added new item to cart:', idCart);
+}
+
+      // if (this.cartArray.id.includes(idCart)) {
+      //   console.log('include worked')
+      //   for (let i = 0; i < this.cartArray.id.length; i++) {
+      //     if (this.cartArray.id[i] === idCart) {
+      //       this.cartArray.quantity[i] += 1;
+      //     }
+      //   }
+      // }
+      // else {
+      //   console.log('adding new item to cart')
+      //   this.cartArray.id.push(idCart);
+      //   this.cartArray.quantity.push(1);
+      // }
+    
     localStorage.setItem('cart', JSON.stringify(this.cartArray));
     this.cartNumber$.next(this.sum(this.cartArray.quantity));
     this.cArray$.next(this.cartArray);
