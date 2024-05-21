@@ -149,12 +149,16 @@ if (index !== -1) {
           this.cartArray = storedCart ? JSON.parse(storedCart) : [];
           this.cartNumber$.next(this.sum(this.cartArray.quantity));
           this.cArray$.next(this.cartArray);
-          // console.log(this.sum(this.cartArray.quantity))
         }
 
         this.cartProducts$.next(
           this.AllProducts$.getValue().products.filter((p) =>
-            this.cartArray.id.includes(p.id)
+          {
+            if (this.cartArray && this.cartArray.id) { 
+              this.cartArray.id.includes(p.id)
+            }
+            
+            }
           )
         );
       });
