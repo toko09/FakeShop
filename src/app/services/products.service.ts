@@ -92,16 +92,19 @@ export class ProductsService {
     // if (this.cartArray.id !== undefined) {
     //   console.log('problem')
     // }
-    if (this.cartArray.id.includes(idCart)) {
-      for (let i = 0; i < this.cartArray.id.length; i++) {
-        if (this.cartArray.id[i] === idCart) {
-          this.cartArray.quantity[i] += 1;
+    if (this.cartArray.id != undefined) { 
+
+      if (this.cartArray.id.includes(idCart)) {
+        for (let i = 0; i < this.cartArray.id.length; i++) {
+          if (this.cartArray.id[i] === idCart) {
+            this.cartArray.quantity[i] += 1;
+          }
         }
+      } else if (!this.cartArray.id.includes(idCart)) {
+        console.log('adding new item to cart')
+        this.cartArray.id.push(idCart);
+        this.cartArray.quantity.push(1);
       }
-    } else if (!this.cartArray.id.includes(idCart)) {
-      console.log('adding new item to cart')
-      this.cartArray.id.push(idCart);
-      this.cartArray.quantity.push(1);
     }
     localStorage.setItem('cart', JSON.stringify(this.cartArray));
     this.cartNumber$.next(this.sum(this.cartArray.quantity));
