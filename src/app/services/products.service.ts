@@ -146,6 +146,10 @@ export class ProductsService {
           this.cartArray = { id: [0], quantity: [0] };
         }
 
+        console.log(this.AllProducts$.getValue().products.filter((p) => {
+          this.cartArray.id.includes(p.id);
+        }))
+        
         this.cartProducts$.next(
           this.AllProducts$.getValue().products.filter((p) => {
             this.cartArray.id.includes(p.id);
