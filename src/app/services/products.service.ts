@@ -99,6 +99,7 @@ export class ProductsService {
         }
       }
     } else if (!this.cartArray.id.includes(idCart)) {
+      console.log('adding new item to cart')
       this.cartArray.id.push(idCart);
       this.cartArray.quantity.push(1);
     }
